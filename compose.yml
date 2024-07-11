@@ -1,0 +1,14 @@
+---
+services:
+  jupyter:
+    build: .
+    container_name: jupyter-tensorflow
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/home/jovyan/work
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - GRANT_SUDO=yes
+      - JUPYTER_TOKEN=newpass
+...
